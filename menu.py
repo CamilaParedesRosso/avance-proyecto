@@ -12,20 +12,23 @@ print('Organiza salidas con tus amigos o conociendo personas. Planea salidas.')
 input('Enter')
 
 #Menu Publico
-#MenuEmpresa
+#Menu Empresa
 
-op1=0
-while op1!=5:
+op=' '
+while op!='0':
     print('Deseas iniciar como: ')
     print('1. Publico')
     print('2. Empresa')
-    print('5. Salir')
-    op1=int(input('Digita la opcion que deseas: '))
-    if op1==1:
-        p=Publico()
+    print('0. Salir')
+    op=input('Digita la opcion que deseas: ')
+    if op=='1':
+        os.system('cls')
+        usuario=input('Usuario: ')
+        contrasena=input('Contraseña: ')
+        
         
     elif op1==2:
-        e=Empresa()
+        
         
     else:
         input('Digite un opcion valida: ')
