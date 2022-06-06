@@ -1,41 +1,42 @@
 import os
 
-class Empresa:
-    def __init__(self,usuario,contrasena,nombre,correo,telefono,direccion):
-        self.usuario=usuario
-        self.contrasena=contrasena
+class Publico:
+    def __init__(self,usuario,self.contrasenanombre,correo,telefono,edad,genero):
         self.nombre=nombre
         self.correo=correo
         self.telefono=telefono
-        self.direccion=direccion
-                
+        self.edad=edad
+        self.genero=genero
+        
     def datos(self):
-        dato=[self.usuario,self.contrasena,self.nombre,self.correo,self.telefono,self.direccion]
+        dato=[self.usuario,self.contrasena,self.nombre,self.correo,self.telefono,self.edad,self.genero]
         return dato
     
-    def mostrar_datos(self):
-        print('Usuario: ',(self.correo))
-        print('Nombre de la Empresa: ',(self.telefono))
+    def perfil(self):
+        print('Usuario: ',(self.usuario))
+        print('Nombre y Apellido Paterno: ',(self.nombre))
         print('Correo: ',(self.correo))
         print('Telefono: ',(self.telefono))
-        print('Direccion: ',(self.direccion))
-    
+        print('Edad: ',(self.direccion))
+        print('Genero: ', (self.genero))
+        
     def registro_usuario(self):
         u=input('Usuario: ')
         self.usuario=u
         co=input('Contraseña: ')
-        self.contrasena=co
-        
+        self.contraseña=co
     def registro(self):
-        n=input('Nombre : ')
+        n=input('Nombre y Apellido Paterno: ')
         self.nombre=n
         c=input('Correo: ')
         self.correo=c
         t=input('Teléfono: ')
         self.telefono=t
-        e=input('Direccion: ')
+        e=input('Edad: ')
         self.edad=e
-
+        g=input('Genero (M/F): ')
+        self.genero=g
+        
     def Crear_archivo(self):
         import pickle
         archivo=open('Publico','ab')
@@ -58,5 +59,8 @@ class Empresa:
     def get_telefono(self):
         return self.telefono
     
-    def get_direccion(self):
-        return self.direccion
+    def get_edad(self):
+        return self.edad
+    
+    def get_genero(self):
+        return self.genero
