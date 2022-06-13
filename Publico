@@ -25,6 +25,7 @@ class Publico:
         self.usuario=u
         co=input('Contraseña: ')
         self.contraseña=co
+        
     def registro(self):
         n=input('Nombre y Apellido Paterno: ')
         self.nombre=n
@@ -43,6 +44,14 @@ class Publico:
         d=self.datos()
         pickle.dump(d,archivo)
         archivo.close()
+        
+    def existe(self, username):
+        with open('Publico', 'rb') as f:
+            while True:
+                try:
+                    data=pickle.load(f)
+                except EOFError:
+                    break
         
     def get_usuario(self):
         return self.usuario
