@@ -1,0 +1,13 @@
+import pickle
+
+class Reporte_P:
+    def Mostrar_Reporte_P:
+        with open('Publico','rb') as archivo:
+        keepreading=True
+        while keepreading:
+            try:
+                data=pickle.load(archivo)
+            except EOFError:
+                keepreading=False
+            else:
+                print(data)
