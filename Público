@@ -1,0 +1,75 @@
+import pickle
+class Publico:
+    def __init__(self,user,password,nombre,correo,telefono,edad,genero):
+        self.nombre=nombre
+        self.correo=correo 
+        self.telefono=telefono
+        self.edad=edad
+        self.genero=genero
+        self.user=user
+        self.password=password
+        
+    def datosP(self):
+        datos=[self.user,self.password,self.nombre,self.correo,self.telefono,self.edad,self.genero]
+        return datos
+        
+    def mostrarP(self):
+        print('Nombre: ',self.nombre)
+        print('Correo: ',(self.correo))
+        print('Telefono: ',(self.telefono))
+        print('Edad: ',(self.edad))
+        print('Genero: ',(self.genero))
+    
+    def registroP(self):
+        u=input('Usuario: ')
+        self.user=u
+        p=input('Contraseña: ')
+        self.password=p
+        n=input('Nombre: ')
+        self.nombre=n
+        c=input('Correo: ')
+        self.correo=c
+        t=input('Telefono: ')
+        self.telefono=t
+        e=input('Edad: ')
+        self.edad=e
+        g=input('Genero: ')
+        self.genero=g
+        
+    def CrearArchivoP(self):
+        archivo=open('Publico','ab')
+        d=self.datosP()
+        pickle.dump(d,archivo)
+        archivo.close()
+        
+    def existeP(self):
+        with (open('Publico', 'rb')) as (archivo):
+            while True:
+                try:
+                    data= pickle.load(archivo)
+                except EOFError:
+                    break
+                else:
+                    print(data)
+                     
+
+    def get_user(self):
+        return self.user
+    
+    def get_password(self):
+        return self.password
+    
+    def get_nombre(self):
+        return self.nombre
+    
+    def get_correo(self):
+        return self.correo
+
+    def get_telefono(self):
+        return self.telefono
+    
+    def get_edad(self):
+        return self.edad
+    
+    def get_genero(self):
+        return self.genero
