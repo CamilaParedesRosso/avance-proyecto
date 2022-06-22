@@ -34,14 +34,6 @@ class Direccion:
         pickle.dump(d,archivo)
         archivo.close()
         
-    def existe(self, username):
-        with open('Direccion', 'rb') as f:
-            while True:
-                try:
-                    data=pickle.load(f)
-                except EOFError:
-                    break
-        
     def get_zona(self):
         return self.zona
     
