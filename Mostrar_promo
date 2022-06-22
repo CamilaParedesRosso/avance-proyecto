@@ -1,0 +1,13 @@
+import pickle
+
+class MostrarPromociones:
+    def MostrarPromo:
+        with open('Promociones','rb') as archivo:
+        keepreading=True
+        while keepreading:
+            try:
+                data=pickle.load(archivo)
+            except EOFError:
+                keepreading=False
+            else:
+                print(data)
